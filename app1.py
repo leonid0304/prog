@@ -22,13 +22,17 @@ def ip():
     #
     a=str(request.remote_addr)
     b=socket.gethostbyaddr(a)
-    c='https://{0}'.format(str(b),)
-
+    c='http://{0}/'.format(str(b[0]),)
 
     # return jsonify({'ip': request.remote_addr}), 200
-    return template.render(name=str(request.get(c)))
+    # return str(b[0])
+
+    d=request.get(c)
+    return (template.render(name=d.text))
+
+    # return template.render(name=str(request.get(c)))
     # return (template.render(name=str(request.remote_addr)))
 
 
 if __name__ == "__main__":
-    app.run()
+    app.run(host='0.0.0.0', port=4568)
