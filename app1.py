@@ -23,7 +23,7 @@ def ip():
     a=str(request.remote_addr)
     b=socket.gethostbyaddr(a)
     c='http://{0}/'.format(str(b[0]),)
-
+    #test_branch	
     # return jsonify({'ip': request.remote_addr}), 200
     # return str(b[0])
 
